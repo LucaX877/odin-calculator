@@ -31,15 +31,15 @@ numberButtons = document.querySelectorAll(".number-button")
 for (let numberButton of numberButtons) {
     numberButton.addEventListener("click", () => {
         console.log(displayEquation.textContent.length);
-        if (displayEquation.textContent.length == 1) displayEquation.textContent = numberButton.textContent;
-        else displayEquation.textContent += " " + numberButton.textContent;
+        if (displayEquation.textContent == 0) displayEquation.textContent = numberButton.textContent;
+        else displayEquation.textContent += numberButton.textContent;
     })
 }
 
 operatorButtons = document.querySelectorAll(".operator-button");
 for (let operatorButton of operatorButtons) {
     operatorButton.addEventListener("click", () => {
-        displayEquation.textContent += " " + operatorButton.textContent
+        displayEquation.textContent += " " + operatorButton.textContent + " ";
     })
 }
 
