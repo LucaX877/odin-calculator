@@ -34,6 +34,7 @@ displayEquation = document.querySelector(".display-equation")
 numberButtons = document.querySelectorAll(".number-button")
 for (let numberButton of numberButtons) {
     numberButton.addEventListener("click", () => {
+        if (displayEquation.textContent == "ERROR" || displayEquation.textContent == "") displayEquation.textContent = 0;
         if (displayEquation.textContent == 0) displayEquation.textContent = numberButton.textContent;
         else displayEquation.textContent += numberButton.textContent;
         }
@@ -43,6 +44,7 @@ for (let numberButton of numberButtons) {
 operatorButtons = document.querySelectorAll(".operator-button");
 for (let operatorButton of operatorButtons) {
     operatorButton.addEventListener("click", () => {
+        if (displayEquation.textContent == "ERROR" || displayEquation.textContent == "") displayEquation.textContent = 0;
         displayEquation.textContent += " " + operatorButton.textContent + " ";
         let items = displayEquation.textContent.split(" ");
         if (items.length == 5) {
@@ -69,5 +71,15 @@ equalButton.addEventListener("click", () => {
 clearButton = document.querySelector(".clear-button");
 clearButton.addEventListener("click", () => {
     displayEquation.textContent = 0;
+    }
+)
+
+deleteButton = document.querySelector(".delete-button");
+deleteButton.addEventListener("click", () => {
+        let oldEquation = displayEquation.textContent;
+        if (oldEquation == "0");
+        else if (oldEquation.includes("ERROR")) displayEquation.textContent = "0";
+        else if (oldEquation.at(-1) == " ") displayEquation.textContent = displayEquation.textContent.slice(0,-3);
+        else displayEquation.textContent = displayEquation.textContent.slice(0,-1);
     }
 )
