@@ -1,21 +1,25 @@
 function add(num1,num2) {
-    console.log(num1 + num2);
-    return num1 + num2;
+    let answer = num1 + num2;
+    if (isNaN(answer)) return "ERROR";
+    else return answer;
 }
 
 function subtract(num1,num2) {
-    console.log(num1 - num2);
-    return num1 - num2;
+    let answer = num1 - num2;
+    if (isNaN(answer)) return "ERROR";
+    else return answer;
 }
 
 function multiply(num1,num2) {
-    console.log(num1 * num2);
-    return num1 * num2;
+    let answer = num1 * num2;
+    if (isNaN(answer)) return "ERROR";
+    else return answer;
 }
 
 function divide(num1,num2) {
-    console.log(num1 / num2);
-    return num1 / num2;
+    let answer = num1 / num2;
+    if (isNaN(answer) || num2 == 0) return "ERROR";
+    else return answer;
 }
 
 function operate(operator,num1,num2) {
@@ -30,7 +34,6 @@ displayEquation = document.querySelector(".display-equation")
 numberButtons = document.querySelectorAll(".number-button")
 for (let numberButton of numberButtons) {
     numberButton.addEventListener("click", () => {
-        console.log(displayEquation.textContent.length);
         if (displayEquation.textContent == 0) displayEquation.textContent = numberButton.textContent;
         else displayEquation.textContent += numberButton.textContent;
     })
@@ -40,7 +43,16 @@ operatorButtons = document.querySelectorAll(".operator-button");
 for (let operatorButton of operatorButtons) {
     operatorButton.addEventListener("click", () => {
         displayEquation.textContent += " " + operatorButton.textContent + " ";
-    })
+        let items = displayEquation.textContent.split(" ");
+        if (items.length == 5) {
+            let number1 = parseInt(items[0]);
+            let operator = items[1];
+            let number2 = parseInt(items[2]);
+            let otherOperator = items[3];
+            displayEquation.textContent = operate(operator,number1,number2) + " " + otherOperator + " ";
+            }
+        }
+    )
 }
 
 equalButton = document.querySelector(".equal-button");
