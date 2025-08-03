@@ -36,7 +36,8 @@ for (let numberButton of numberButtons) {
     numberButton.addEventListener("click", () => {
         if (displayEquation.textContent == 0) displayEquation.textContent = numberButton.textContent;
         else displayEquation.textContent += numberButton.textContent;
-    })
+        }
+    )
 }
 
 operatorButtons = document.querySelectorAll(".operator-button");
@@ -62,9 +63,11 @@ equalButton.addEventListener("click", () => {
     let operator = items[1];
     let number2 = parseInt(items[2]);
     displayEquation.textContent = operate(operator,number1,number2);
-})
+    }
+)
 
 clearButton = document.querySelector(".clear-button");
 clearButton.addEventListener("click", () => {
     displayEquation.textContent = 0;
-})
+    }
+)
