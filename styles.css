@@ -43,7 +43,7 @@
     gap: 10px;
 }
 
-.number-button, .operator-button, .equal-button, .clear-button, .delete-button {
+.number-button, .operator-button, .equal-button, .clear-button, .delete-button, .decimal-button {
     color: grey;
     width: 80px;
     height: 80px;
@@ -72,4 +72,9 @@
 
 .delete-button {
     background-color: blanchedalmond;
+}
+
+.decimal-button {
+    color: white;
+    background-color: burlywood;
 }
