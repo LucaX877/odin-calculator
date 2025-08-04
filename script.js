@@ -67,8 +67,11 @@ equalButton.addEventListener("click", () => {
     let number1 = parseFloat(items[0]);
     let operator = items[1];
     let number2 = parseFloat(items[2]);
-    displayEquation.textContent = operate(operator,number1,number2);
-    isAnswer = true;
+    if (isNaN(number2));
+    else {
+        displayEquation.textContent = operate(operator,number1,number2);
+        isAnswer = true;
+        }
     }
 )
 
