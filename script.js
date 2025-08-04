@@ -35,8 +35,9 @@ numberButtons = document.querySelectorAll(".number-button")
 for (let numberButton of numberButtons) {
     numberButton.addEventListener("click", () => {
         if (displayEquation.textContent == "ERROR" || displayEquation.textContent == "") displayEquation.textContent = 0;
-        if (displayEquation.textContent == 0) displayEquation.textContent = numberButton.textContent;
+        if (displayEquation.textContent == 0 || isAnswer) displayEquation.textContent = numberButton.textContent;
         else displayEquation.textContent += numberButton.textContent;
+        isAnswer = false;
         }
     )
 }
@@ -54,6 +55,7 @@ for (let operatorButton of operatorButtons) {
             let otherOperator = items[3];
             displayEquation.textContent = operate(operator,number1,number2) + " " + otherOperator + " ";
             }
+        isAnswer = false;
         }
     )
 }
@@ -65,6 +67,7 @@ equalButton.addEventListener("click", () => {
     let operator = items[1];
     let number2 = parseInt(items[2]);
     displayEquation.textContent = operate(operator,number1,number2);
+    isAnswer = true;
     }
 )
 
@@ -83,3 +86,5 @@ deleteButton.addEventListener("click", () => {
         else displayEquation.textContent = displayEquation.textContent.slice(0,-1);
     }
 )
+
+let isAnswer = false;
