@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Helvetica;
+    color: grey;
 }
 
 .main-container {
     width: 100vw;
     height: 100vh;
-    background-color: aquamarine;
+    background-color: #675673;
     display: flex;
     align-items: center;
 }
@@ -15,7 +17,8 @@
 .calculator {
     width: 400px;
     height: 600px;
-    background-color: lightyellow;
+    background-color: #689B8A;
+    border: 2px solid #66b0ab;
     border-radius: 20px;
     margin: auto;
     padding: 20px;
@@ -28,12 +31,17 @@
 .calculator-display {
     width: 360px;
     height: 100px;
+    border: 2px solid #66b0ab;
     border-radius: 20px;
-    background-color: silver;
+    background-color: #78B9B5;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 10px;
+}
+
+.display-equation {
+    font-size: 30px;
 }
 
 .calculator-buttons {
@@ -44,37 +52,10 @@
 }
 
 .number-button, .operator-button, .equal-button, .clear-button, .delete-button, .decimal-button {
-    color: grey;
+    background-color: #78B9B5;
     width: 80px;
     height: 80px;
+    border: 2px solid #66b0ab;
     border-radius: 20px;
-    border: 0;
     font-size: 25px;
-}
-
-.number-button {
-    background-color: lightcyan;
-}
-
-.operator-button {
-    background-color: lightcoral;
-}
-
-.equal-button {
-    color: white;
-    background-color: mediumpurple;
-}
-
-.clear-button {
-    color: white;
-    background-color: cadetblue;
-}
-
-.delete-button {
-    background-color: blanchedalmond;
-}
-
-.decimal-button {
-    color: white;
-    background-color: burlywood;
 }
