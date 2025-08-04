@@ -46,7 +46,8 @@ operatorButtons = document.querySelectorAll(".operator-button");
 for (let operatorButton of operatorButtons) {
     operatorButton.addEventListener("click", () => {
         if (displayEquation.textContent == "ERROR" || displayEquation.textContent == "") displayEquation.textContent = 0;
-        displayEquation.textContent += " " + operatorButton.textContent + " ";
+        if (displayEquation.textContent.at(-1) == " ");
+        else displayEquation.textContent += " " + operatorButton.textContent + " ";
         let items = displayEquation.textContent.split(" ");
         if (items.length == 5) {
             let number1 = parseFloat(items[0]);
