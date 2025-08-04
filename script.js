@@ -82,7 +82,7 @@ deleteButton = document.querySelector(".delete-button");
 deleteButton.addEventListener("click", () => {
         let oldEquation = displayEquation.textContent;
         if (oldEquation == "0");
-        else if (oldEquation.includes("ERROR")) displayEquation.textContent = "0";
+        else if (oldEquation.includes("ERROR") || oldEquation.length == 1) displayEquation.textContent = "0";
         else if (oldEquation.at(-1) == " ") displayEquation.textContent = displayEquation.textContent.slice(0,-3);
         else displayEquation.textContent = displayEquation.textContent.slice(0,-1);
         isAnswer = false;
