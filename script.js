@@ -106,4 +106,20 @@ decimalButton.addEventListener("click", () => {
     }
 )
 
+negativeButton = document.querySelector(".negative-button");
+negativeButton.addEventListener("click", () => {
+        let items = displayEquation.textContent.split(" ");
+        console.log(items);
+        if (typeof parseFloat(items[items.length - 1]) == "number" && !(items[items.length - 1] == "")) {
+            if (items[items.length - 1].includes("-")) {
+                items[items.length -1] = items[items.length - 1] * -1;
+                
+            }
+            else items[items.length - 1] = `-${items[items.length - 1]}`;
+            let display = items.join(" ");
+            displayEquation.textContent = display;
+        }
+    }
+)
+
 let isAnswer = false;

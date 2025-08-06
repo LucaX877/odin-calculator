@@ -55,7 +55,7 @@ html, body {
     gap: 10px;
 }
 
-.number-button, .operator-button, .equal-button, .clear-button, .delete-button, .decimal-button {
+.number-button, .operator-button, .equal-button, .clear-button, .delete-button, .decimal-button, .negative-button {
     background-color: #78B9B5;
     width: 80px;
     height: 80px;
